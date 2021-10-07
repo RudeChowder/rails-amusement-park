@@ -1,0 +1,31 @@
+<%= form_for user do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br>
+
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+  <br>
+
+  <%= form.label :password_confirmation %>
+  <%= form.password_field :password_confirmation %>
+  <br>
+
+  <%= form.label :height %>
+  <%= form.number_field :height %>
+  <br>
+
+  <%= form.label :happiness %>
+  <%= form.number_field :happiness %>
+  <br>
+
+  <%= form.label :nausea %>
+  <%= form.number_field :nausea %>
+  <br>
+
+  <%= form.label :tickets %>
+  <%= form.number_field :tickets %>
+  <br>
+
+  <%= form.submit %>
+<% end %>
