@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     User.find_by(id: session[:user_id])
   end
 
-  def login_required
+  def admin_required
     redirect_to :root unless current_user.admin
   end
 end

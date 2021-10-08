@@ -1,6 +1,6 @@
 class AttractionsController < ApplicationController
   before_action :set_attraction, only: [:show, :edit, :update]
-
+  before_action :admin_required, only: [:new, :create, :edit, :update]
 
   def index
     @attractions = Attraction.all
