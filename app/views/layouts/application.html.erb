@@ -19,10 +19,12 @@
           </button>
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
         <% if current_user %>
-         <%= link_to "Log Out", signout_path, class: "navbar-brand" %>
+          <%= link_to "Profile", current_user, class: "navbar-brand" %>
+          <%= link_to "See attractions", attractions_path, class: "navbar-brand" %>
+          <%= link_to "Log Out", signout_path, class: "navbar-brand" %>
         <% else %>
-         <%= link_to "Sign Up", new_user_path, class: "navbar-brand" %>
-         <%= link_to "Sign In", signin_path, class: "navbar-brand" %>
+          <%= link_to "Sign Up", new_user_path, class: "navbar-brand" %>
+          <%= link_to "Sign In", signin_path, class: "navbar-brand" %>
         <% end %>
 
         </div>

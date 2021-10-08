@@ -5,10 +5,11 @@ class Ride < ApplicationRecord
   def take_ride
     if enough_tickets? && tall_enough?
       send_user_on_ride
+      "Thanks for riding the #{attraction.name}!"
     else
       message = "Sorry."
-      message = "#{message} You do not have enough tickets to ride the Roller Coaster." unless enough_tickets?
-      message = "#{message} You are not tall enough to ride the Roller Coaster." unless tall_enough?
+      message = "#{message} You do not have enough tickets to ride the #{attraction.name}." unless enough_tickets?
+      message = "#{message} You are not tall enough to ride the #{attraction.name}." unless tall_enough?
       message
     end
   end

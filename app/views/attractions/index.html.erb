@@ -1,0 +1,6 @@
+<h2>Attractions</h2>
+<div>
+  <% @attractions.each do |attraction| %>
+    <p><%= link_to "Go on #{attraction.name}", attraction %></p>
+  <% end %>
+</div>
