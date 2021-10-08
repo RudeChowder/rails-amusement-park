@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def show
+    redirect_to :root unless session[:user_id]
     @user = User.find(params[:id])
   end
 

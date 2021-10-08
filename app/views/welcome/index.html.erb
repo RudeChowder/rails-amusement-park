@@ -1,0 +1,6 @@
+<h2>Welcome! Nice to see you<%= " #{current_user.name}" if current_user %>!<h2>
+<% if current_user %>
+  <%= link_to "Log Out", signout_path %>
+<% else %>
+  <%= link_to "Sign In", signin_path %>
+<% end %>
