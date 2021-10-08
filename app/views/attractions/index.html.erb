@@ -1,6 +1,9 @@
 <h2>Attractions</h2>
 <div>
-  <% @attractions.each do |attraction| %>
-    <p><%= link_to "Go on #{attraction.name}", attraction %></p>
+  <% if current_user.admin %>
+    <%= render partial: "admin_attraction", collection: @attractions %>
+    <%= link_to "New Attraction", new_attraction_path %>
+  <% else %>
+    <%= render partial: "attraction", collection: @attractions %>
   <% end %>
 </div>

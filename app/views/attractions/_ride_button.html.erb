@@ -1,0 +1,5 @@
+<%= form_tag rides_path, method: :post do |form| %>
+  <%= hidden_field_tag "ride[user_id]", current_user.id %>
+  <%= hidden_field_tag "ride[attraction_id]", params[:id] %>
+  <%= submit_tag "Go on this ride" %>
+<% end %>

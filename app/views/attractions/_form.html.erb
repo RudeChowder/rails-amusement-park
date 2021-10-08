@@ -1,0 +1,39 @@
+<% if attraction.errors.any? %>
+  <div class="alert alert-danger">
+    <h3>
+      <%= pluralize attraction.errors.count, "error" %>
+      prohibited this attraction from being saved:
+    </h3>
+    <ul>
+      <% attraction.errors.full_messages.each do |message| %>
+        <li>
+          <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for attraction do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br>
+
+  <%= form.label :tickets %>
+  <%= form.number_field :tickets %>
+  <br>
+
+  <%= form.label :nausea_rating %>
+  <%= form.number_field :nausea_rating %>
+  <br>
+  
+  <%= form.label :happiness_rating %>
+  <%= form.number_field :happiness_rating %>
+  <br>
+
+  <%= form.label :min_height %>
+  <%= form.number_field :min_height %>
+  <br>
+
+  <%= form.submit %>
+<% end %>
